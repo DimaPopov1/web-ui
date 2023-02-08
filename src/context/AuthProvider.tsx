@@ -4,8 +4,12 @@ interface AuthState {
     auth: object ;
 }
 
+const enum Roles{
+    User='User',
+    Dealer='Dealer'
+}
 interface AuthContextProps {
-    auth: object;
+    auth: {roles:Roles};
     setAuth: React.Dispatch<React.SetStateAction<AuthState>>;
 }
 
@@ -19,7 +23,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     const [auth, setAuth] = useState<AuthState>({} as AuthState);
 
     return (
-        <AuthContext.Provider value={{ auth, setAuth }}>
+        <AuthContext.Provider value={{ auth:{roles:Roles.User}, setAuth }}>
             {children}
         </AuthContext.Provider>
     );

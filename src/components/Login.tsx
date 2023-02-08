@@ -67,6 +67,14 @@ const Login = () => {
     }
   }
 
+  const handleUsername = (e: React.FormEvent<HTMLInputElement>) => {
+    const target = e.target as HTMLInputElement;
+    setUser( target.value)
+  }
+  const handlePassword = (e: React.FormEvent<HTMLInputElement>) => {
+    const target = e.target as HTMLInputElement;
+    setPwd( target.value)
+  }
   return (
             <section>
               <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
@@ -78,7 +86,7 @@ const Login = () => {
                     id="username"
                     ref={userRef}
                     autoComplete="off"
-                    onChange={(e) => setUser(e.target.value)}
+                    onChange={handleUsername}
                     value={user}
                     required
                 />
@@ -87,7 +95,7 @@ const Login = () => {
                 <input
                     type="password"
                     id="password"
-                    onChange={(e) => setPwd(e.target.value)}
+                    onChange={handlePassword}
                     value={pwd}
                     required
                 />

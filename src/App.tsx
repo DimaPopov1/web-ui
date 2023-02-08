@@ -17,7 +17,7 @@ function App() {
               <Route path="register" element={<Register />} />
 
               {/* we want to protect these routes */}
-              <Route element={<RequireAuth />}>
+              <Route element={<RequireAuth AllowedRole="Use" />}>
                   <Route path="/" element={<Home />} />
               </Route>
 
