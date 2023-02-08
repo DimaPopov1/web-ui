@@ -1,7 +1,7 @@
 import { createContext, useState, ReactNode } from "react";
 
 interface AuthState {
-    auth: object;
+    auth: object ;
 }
 
 interface AuthContextProps {
