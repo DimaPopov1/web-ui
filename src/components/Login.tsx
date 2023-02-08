@@ -39,12 +39,11 @@ const Login = () => {
             withCredentials: false
           }
       );
-      console.log(JSON.stringify(response?.data));
-      console.log(JSON.stringify(response));
       const accessToken = response?.data?.accessToken;
-      const refreshToken = response?.data?.roles;
-      setAuth({ auth: { accessToken: accessToken, username:user } });
+      const refreshToken = response?.data?.refreshToken;
+      setAuth({ auth: { refreshTokenToken: refreshToken, username:user } });
       setCookie('Authorization', accessToken);
+      localStorage.setItem('refreshToken', refreshToken);
 
       setUser('');
       setPwd('');
