@@ -1,13 +1,18 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
 
-import './App.css';
+import './css/App.css';
 import Register from './components/Register';
 import Login from './components/Login';
 import Layout from './components/Layout';
 import RequireAuth from './components/RequireAuth';
 import Home from './components/Home';
 
+const ROLES = {
+    'User':'User',
+    'Dealer':'Dealer',
+    'Admin':'Admin'
+}
 function App() {
   return (
       <Routes>
@@ -17,7 +22,7 @@ function App() {
               <Route path="register" element={<Register />} />
 
               {/* we want to protect these routes */}
-              <Route element={<RequireAuth AllowedRole="User" />}>
+              <Route element={<RequireAuth AllowedRole = {ROLES.User} />}>
                   <Route path="/" element={<Home />} />
               </Route>
 
