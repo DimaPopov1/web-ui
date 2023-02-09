@@ -80,6 +80,18 @@ const Register = () => {
             }
         }
     }
+    const handleUsername = (e: React.FormEvent<HTMLInputElement>) => {
+        const target = e.target as HTMLInputElement;
+        setUser( target.value)
+    }
+    const handlePassword = (e: React.FormEvent<HTMLInputElement>) => {
+        const target = e.target as HTMLInputElement;
+        setPwd( target.value)
+    }
+    const handleMatchPwd = (e: React.FormEvent<HTMLInputElement>) => {
+        const target = e.target as HTMLInputElement;
+        setMatchPwd( target.value)
+    }
 
     return(
         <>
@@ -105,7 +117,7 @@ const Register = () => {
                     id="username"
                     ref={userRef}
                     autoComplete="off"
-                    onChange={(e) => setUser(e.target.value)}
+                    onChange={handleUsername}
                     required
                     area-invalid={validName ? "false" : "true"}
                     area-describedly="uidnote"
@@ -119,6 +131,7 @@ const Register = () => {
                     Must begin with a letter.<br />
                     Letters, numbers, underscores, hyphens allowed.
                 </p>
+
                 <label htmlFor="password">
                     Password:
                     <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
@@ -127,7 +140,7 @@ const Register = () => {
                 <input
                     type="password"
                     id="password"
-                    onChange={(e) => setPwd(e.target.value)}
+                    onChange={handlePassword}
                     value={pwd}
                     required
                     aria-invalid={validPwd ? "false" : "true"}
@@ -151,7 +164,7 @@ const Register = () => {
                 <input
                     type="password"
                     id="confirm_pwd"
-                    onChange={(e) => setMatchPwd(e.target.value)}
+                    onChange={handleMatchPwd}
                     value={matchPwd}
                     required
                     aria-invalid={validMatch ? "false" : "true"}
