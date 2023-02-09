@@ -6,7 +6,8 @@ import {Link, useNavigate, useLocation} from 'react-router-dom';
 import axios from "../routes/axios";
 import useAuth from "../hooks/useAuth";
 
-const LOGIN_URL = '/login';
+const LOGIN_API_URL = '/login';
+
 const Login = () => {
   const { setAuth } = useAuth();
 
@@ -36,7 +37,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(LOGIN_URL,
+      const response = await axios.post(LOGIN_API_URL,
           JSON.stringify({ login:user, password:pwd }),
           {
             headers: { 'Content-Type': 'application/json' },
@@ -101,13 +102,11 @@ const Login = () => {
                 />
                 <button>Login</button>
               </form>
-              <p>
-                Need an Account?<br />
+
                 <span className="line">
-                            {/*put router link here*/}
-                  <a href="#">Sign Up</a>
+                  <a href="/register">Sign Up</a>
                         </span>
-              </p>
+
             </section>
         )
 }
