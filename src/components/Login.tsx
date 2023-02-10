@@ -48,7 +48,7 @@ const Login = () => {
       const refreshToken = response?.data?.refreshToken;
       const role = response?.data.role;
 
-      setAuth({ auth:{ role:role, username:user } });
+      setAuth({ role:role});
       setCookie('Authorization', accessToken);
       localStorage.setItem('refreshToken', refreshToken);
 

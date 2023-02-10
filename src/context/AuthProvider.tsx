@@ -1,29 +1,24 @@
-import { createContext, useState, ReactNode } from "react";
+import React, { createContext, useState } from "react";
 
-interface AuthState {
-    auth: object ;
-}
-
-const enum Roles{
-    User='User',
-    Dealer='Dealer'
-}
 interface AuthContextProps {
-    auth: {roles:Roles};
-    setAuth: React.Dispatch<React.SetStateAction<AuthState>>;
+    auth: { role: string };
+    setAuth: (auth: { role: string }) => void;
 }
 
-const AuthContext = createContext<AuthContextProps>({} as AuthContextProps);
+const AuthContext = createContext<AuthContextProps>({
+    auth: { role: "" },
+    setAuth: () => {},
+});
 
 interface AuthProviderProps {
-    children: ReactNode;
+    children: React.ReactNode;
 }
 
-export const AuthProvider = ({ children }: AuthProviderProps) => {
-    const [auth, setAuth] = useState<AuthState>({} as AuthState);
+export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
+    const [auth, setAuth] = useState({ role: "" });
 
     return (
-        <AuthContext.Provider value={{ auth:{roles:Roles.User}, setAuth }}>
+        <AuthContext.Provider value={{ auth, setAuth }}>
             {children}
         </AuthContext.Provider>
     );
