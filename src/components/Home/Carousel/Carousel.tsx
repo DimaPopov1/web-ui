@@ -1,7 +1,7 @@
 import React from "react";
-import './Carusel.css';
+import './Carousel.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-const Carusel = () => {
+const Carousel = () => {
     return (
         <div id="myCarousel" className="carousel slide" data-bs-ride="true">
             <div className="carousel-indicators">
@@ -14,35 +14,35 @@ const Carusel = () => {
             </div>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img src={require("./../images/home/pexels-garvin-st-villier-3311574.jpg")} className="d-block w-100" alt="..."/>
+                    <img src={require("../../../images/home/pexels-garvin-st-villier-3311574.jpg")} className="d-block w-100" alt="..."/>
                     <div className="container">
                         <div className="carousel-caption text-left">
                             <h1>Example headline.</h1>
                             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
                                 gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a className="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                            <p><a className="btn btn-lg btn-primary" href="src/components#" role="button">Sign up today</a></p>
                         </div>
                     </div>
                 </div>
                 <div className="carousel-item">
-                    <img src={require("./../images/home/pexels-photo-849835.jpg")} className="d-block w-100" alt="..."/>
+                    <img src={require("../../../images/home/pexels-photo-849835.jpg")} className="d-block w-100" alt="..."/>
                     <div className="container">
                         <div className="carousel-caption">
-                            <h1>.</h1>
+                            <h1>Way in the future</h1>
                             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
                                 gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a className="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                            <p><a className="btn btn-lg btn-primary" href="src/components#" role="button">Learn more</a></p>
                         </div>
                     </div>
                 </div>
                 <div className="carousel-item">
-                    <img src={require("./../images/home/pexels-photo-1075947.jpg")} className="d-block w-100" alt="..."/>
+                    <img src={require("../../../images/home/pexels-photo-1075947.jpg")} className="d-block w-100" alt="..."/>
                     <div className="container">
                         <div className="carousel-caption text-right">
                             <h1>Comfort For Everyone.</h1>
                             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
                                 gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a className="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                            <p><a className="btn btn-lg btn-primary" href="src/components#" role="button">Browse gallery</a></p>
                         </div>
                     </div>
                 </div>
@@ -61,4 +61,4 @@ const Carusel = () => {
     )
 }
 
-export default Carusel;
+export default Carousel;

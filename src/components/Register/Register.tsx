@@ -1,7 +1,7 @@
 import {useRef, useState, useEffect}  from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from "./../routes/axios";
+import axios from "../../routes/axios";
 import { AxiosError } from 'axios'
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
@@ -99,7 +99,7 @@ const Register = () => {
                 <section>
                     <h1>Success!</h1>
                     <p>
-                        <a href="#">Sign In</a>
+                        <a href="src/components#">Sign In</a>
                     </p>
                 </section>
             ) : (
@@ -183,11 +183,11 @@ const Register = () => {
             <p>
                 <span>
                             {/*put router link here*/}
-                    <a href="/login">Already registered?</a>
+                    <a href="/src/components/Login/Login">Already registered?</a>
                         </span><br />
                 <span>
                             {/*put router link here*/}
-                    <a href="#">Forgot password?</a>
+                    <a href="src/components#">Forgot password?</a>
                         </span>
             </p>
         </section>

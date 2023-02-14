@@ -1,11 +1,12 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
-import './css/App.css';
-import Register from './components/Register';
-import Login from './components/Login';
+import Register from './components/Register/Register';
+import Login from './components/Login/Login';
 import Layout from './components/Layout';
 import RequireAuth from './components/RequireAuth';
-import Home from './components/Home';
+import Home from './components/Home/Home';
+
+import './css/App.css';
 
 const ROLES = {
     'User':'User',
