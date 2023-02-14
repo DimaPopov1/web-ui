@@ -15,7 +15,6 @@ const ContainerMarketing = () => {
                             Praesent commodo cursus magna.</p>
                         <p><a className="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
                 </div>
-                //4
                 <div className="col-lg-4">
                     <img className="rounded-circle" src={require('./../images/home/engine-2770374_960_720.jpg')}
                          alt="Generic placeholder image" width="140" height="140"/>

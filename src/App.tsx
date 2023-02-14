@@ -1,6 +1,5 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
-
 import './css/App.css';
 import Register from './components/Register';
 import Login from './components/Login';
@@ -21,11 +20,11 @@ function App() {
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
 
-              {/* we want to protect these routes */}
+              {/* we want to protect these routes */}{/*
               <Route element={<RequireAuth AllowedRole = {ROLES.User} />}>
                   <Route path="/" element={<Home />} />
-              </Route>
-
+              </Route>*/}
+              <Route path="/" element={<Home />} />
         {/*      <Route element={<RequireAuth allowedRoles={[ROLES.Editor]}/>}>
                   <Route path="editor" element={<Editor/>}/>
               </Route>
