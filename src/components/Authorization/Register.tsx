@@ -183,7 +183,7 @@ const Register = () => {
             <p>
                 <span>
                             {/*put router link here*/}
-                    <a href="/src/components/Login/Login">Already registered?</a>
+                    <a href="/src/components/Authorization/Login">Already registered?</a>
                         </span><br />
                 <span>
                             {/*put router link here*/}

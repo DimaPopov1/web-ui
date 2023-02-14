@@ -1,12 +1,13 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
-import Register from './components/Register/Register';
-import Login from './components/Login/Login';
+import Register from './components/Authorization/Register';
+import Login from './components/Authorization/Login';
 import Layout from './components/Layout';
 import RequireAuth from './components/RequireAuth';
 import Home from './components/Home/Home';
-
+import AuthFooter from './components/Authorization/Footer';
 import './css/App.css';
+import Footer from "./components/Authorization/Footer";
 
 const ROLES = {
     'User':'User',
@@ -18,6 +19,7 @@ function App() {
       <Routes>
           <Route path="/" element={<Layout />}>
               {/* public routes */}
+
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
 

@@ -14,10 +14,12 @@ const Carousel = () => {
                         aria-label="Slide 3"></button>
             </div>
             <div className="carousel-inner">
-                <Carouseltem image="pexels-garvin-st-villier-3311574.jpg" header="Example Header."  text="Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
+                <Carouseltem image="pexels-garvin-st-villier-3311574.jpg" status="active" header="Example Header."  text="Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
                                 gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit." buttonName="Sign up today"/>
+
                 <Carouseltem image="pexels-photo-849835.jpg" header="Way in the future"  text="Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
                                 gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit." buttonName="Learn more"/>
+
                 <Carouseltem image="pexels-photo-1075947.jpg" header="Comfort For Everyone"  text="Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
                                 gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."/>
             </div>

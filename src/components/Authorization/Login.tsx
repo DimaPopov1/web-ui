@@ -104,7 +104,7 @@ const Login = () => {
               </form>
 
                 <span className="line">
-                  <a href="/src/components/Register/Register">Sign Up</a>
+                  <a href="/src/components/Authorization/Register">Sign Up</a>
                         </span>
 
             </section>
