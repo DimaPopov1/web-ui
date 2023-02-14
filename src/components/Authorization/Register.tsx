@@ -3,6 +3,7 @@ import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "../../routes/axios";
 import { AxiosError } from 'axios'
+import {NavLink} from "react-router-dom";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -183,11 +184,11 @@ const Register = () => {
             <p>
                 <span>
                             {/*put router link here*/}
-                    <a href="/src/components/Authorization/Login">Already registered?</a>
+                    <NavLink to="/Login">Already registered?</NavLink>
                         </span><br />
                 <span>
                             {/*put router link here*/}
-                    <a href="src/components#">Forgot password?</a>
+                    <a href="">Forgot password?</a>
                         </span>
             </p>
         </section>
