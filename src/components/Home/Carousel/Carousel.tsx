@@ -1,6 +1,7 @@
 import React from "react";
 import './Carousel.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Carouseltem from "./Carouseltem";
 const Carousel = () => {
     return (
         <div id="myCarousel" className="carousel slide" data-bs-ride="true">
@@ -13,39 +14,12 @@ const Carousel = () => {
                         aria-label="Slide 3"></button>
             </div>
             <div className="carousel-inner">
-                <div className="carousel-item active">
-                    <img src={require("../../../images/home/pexels-garvin-st-villier-3311574.jpg")} className="d-block w-100" alt="..."/>
-                    <div className="container">
-                        <div className="carousel-caption text-left">
-                            <h1>Example headline.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a className="btn btn-lg btn-primary" href="src/components#" role="button">Sign up today</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div className="carousel-item">
-                    <img src={require("../../../images/home/pexels-photo-849835.jpg")} className="d-block w-100" alt="..."/>
-                    <div className="container">
-                        <div className="carousel-caption">
-                            <h1>Way in the future</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a className="btn btn-lg btn-primary" href="src/components#" role="button">Learn more</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div className="carousel-item">
-                    <img src={require("../../../images/home/pexels-photo-1075947.jpg")} className="d-block w-100" alt="..."/>
-                    <div className="container">
-                        <div className="carousel-caption text-right">
-                            <h1>Comfort For Everyone.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a className="btn btn-lg btn-primary" href="src/components#" role="button">Browse gallery</a></p>
-                        </div>
-                    </div>
-                </div>
+                <Carouseltem image="pexels-garvin-st-villier-3311574.jpg" header="Example Header."  text="Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
+                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit." buttonName="Sign up today"/>
+                <Carouseltem image="pexels-photo-849835.jpg" header="Way in the future"  text="Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
+                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit." buttonName="Learn more"/>
+                <Carouseltem image="pexels-photo-1075947.jpg" header="Comfort For Everyone"  text="Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
+                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."/>
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#myCarousel"
                     data-bs-slide="prev">
