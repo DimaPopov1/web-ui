@@ -8,6 +8,7 @@ import Home from './components/Home/Home';
 import AuthFooter from './components/Footer/Footer';
 import './css/App.css';
 import Footer from "./components/Footer/Footer";
+import Profile from "./components/Profile/Profile";
 
 const ROLES = {
     'User':'User',
@@ -27,6 +28,8 @@ function App() {
                   <Route path="/" element={<Home />} />
               </Route>*/}
               <Route path="/" element={<Home />} />
+              <Route path="/profile" element={<Profile />} />
+
           </Route>
       </Routes>
   );

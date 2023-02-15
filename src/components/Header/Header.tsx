@@ -1,5 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {NavLink} from "react-router-dom";
 
 const Header = () => {
     return (
@@ -17,7 +18,7 @@ const Header = () => {
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item active">
-                            <a className="nav-link text-dark" href="#">Home</a>
+                            <NavLink className="nav-link text-dark" to="/">Home</NavLink>
                         </li>
                         <li className="nav-item ">
                             <a className="nav-link text-dark" href="#">Catalogue</a>
@@ -26,7 +27,7 @@ const Header = () => {
                             <a className="nav-link text-dark" href="#">Rentals</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-dark" href="#">Profile</a>
+                            <NavLink className="nav-link text-dark" to="/profile">Profile</NavLink>
                         </li>
                     </ul>
                 </div>
