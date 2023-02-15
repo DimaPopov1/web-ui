@@ -1,7 +1,12 @@
 import React from "react";
-import s from './Footer.module.css';
 const Footer = () => {
     let currentYear =  (new Date).getFullYear();
-    return <div className={s.Footer}>{`Copyright © Dimonchik Production ${currentYear}`}</div>;
+    return (
+        <footer className="border-top footer text-muted">
+            <div className="container">
+                &copy; {currentYear} - Car rental
+            </div>
+        </footer>
+    );
 }
 export default Footer;

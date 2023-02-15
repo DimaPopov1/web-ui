@@ -88,7 +88,7 @@ const ContainerMarketing = () => {
                             </div>
                         </div>
 
-                        <hr className="featurette-divider"/>
+                      
 
         </div>
     );
