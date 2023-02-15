@@ -10,6 +10,12 @@ import './css/App.css';
 import Footer from "./components/Footer/Footer";
 import Profile from "./components/Profile/Profile";
 
+let user = {
+    email : "User@mail.ru",
+    firstName: "Igor",
+    lastName: "",
+    address : "Downton,25"
+}
 const ROLES = {
     'User':'User',
     'Dealer':'Dealer',
@@ -28,7 +34,7 @@ function App() {
                   <Route path="/" element={<Home />} />
               </Route>*/}
               <Route path="/" element={<Home />} />
-              <Route path="/profile" element={<Profile />} />
+              <Route path="/profile" element={<Profile user={user} />} />
 
           </Route>
       </Routes>
