@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 
 import s from './Profile.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProfileImage from "./ProfileImage";
-export interface IUser  {
+
+export interface IUser {
     user: {
         email: string
         firstName?: string
@@ -11,8 +12,14 @@ export interface IUser  {
         address?: string
     }
 }
-
 const Profile = ({user}: IUser) => {
+
+    const [isDisabled, setIsDisabled] = useState(false);
+
+    const enableInput = () => {
+        setIsDisabled(!isDisabled)
+    };
+
     return (
         <div className={s.ProfileContainer}>
             <div className="border-end">
@@ -20,14 +27,25 @@ const Profile = ({user}: IUser) => {
             </div>
             <div className="mt-4 m-3">
                 <div><label className="labels">First Name</label><input type="text"
-                    className="form-control"  placeholder="Your first name"  value={user.firstName} disabled /></div>
+                                                                        className="form-control"
+                                                                        placeholder="Your first name"
+                                                                        value={user.firstName}
+                                                                        disabled={isDisabled}/></div>
                 <div><label className="labels">Last Name</label><input type="text"
-                    className="form-control"  placeholder="Your last name"  value={user.lastName} disabled /></div>
+                                                                       className="form-control"
+                                                                       placeholder="Your last name"
+                                                                       value={user.lastName}
+                                                                       disabled={isDisabled}/></div>
                 <div><label className="labels">Address</label><input type="text"
-                    className="form-control"  placeholder="Your address"  value={user.address} disabled /></div>
+                                                                     className="form-control"
+                                                                     placeholder="Your address"
+                                                                     value={user.address}
+                                                                     disabled={isDisabled}/></div>
 
-                <div className="mt-5 text-center"> {/*s.profile-button*/}
-                    <button className={['btn btn-primary ', s.profileButton].join('')} type="button">Update Profile</button>
+                <div className="mt-5 text-center">
+                    <button className={['btn btn-primary ', s.profileButton].join('')} type="button"
+                            onClick={enableInput}>Update Profile
+                    </button>
                 </div>
             </div>
         </div>
