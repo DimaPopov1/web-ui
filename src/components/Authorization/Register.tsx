@@ -1,7 +1,7 @@
 import {useRef, useState, useEffect}  from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from "../../routes/axios";
+import axios from "../../routes/authApi";
 import { AxiosError } from 'axios'
 import {NavLink} from "react-router-dom";
 

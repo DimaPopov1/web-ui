@@ -3,7 +3,7 @@ import {useCookies} from 'react-cookie';
 import {AxiosError} from 'axios';
 import {Link, useNavigate, useLocation, NavLink} from 'react-router-dom';
 
-import axios from "../../routes/axios";
+import axios from "../../routes/authApi";
 import useAuth from "../../hooks/useAuth";
 
 const LOGIN_API_URL = '/login';
