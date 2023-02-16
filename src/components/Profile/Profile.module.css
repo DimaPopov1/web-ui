@@ -12,22 +12,22 @@
     border-color: #BA68C8
 }
 
-.profile-button {
+.profileButton {
     background: rgb(99, 39, 120);
     box-shadow: none;
     border: none
 }
 
-.profile-button:hover {
+.profileButton:hover {
     background: #682773
 }
 
-.profile-button:focus {
+.profileButton:focus {
     background: #682773;
     box-shadow: none
 }
 
-.profile-button:active {
+.profileButton:active {
     background: #682773;
     box-shadow: none
 }

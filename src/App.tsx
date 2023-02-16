@@ -8,20 +8,16 @@ import Home from './components/Home/Home';
 import AuthFooter from './components/Footer/Footer';
 import './css/App.css';
 import Footer from "./components/Footer/Footer";
-import Profile from "./components/Profile/Profile";
+import Profile, {IUser} from "./components/Profile/Profile";
+import {IState} from "./redux/state";
 
-let user = {
-    email : "User@mail.ru",
-    firstName: "Igor",
-    lastName: "",
-    address : "Downton,25"
-}
+
 const ROLES = {
     'User':'User',
     'Dealer':'Dealer',
     'Admin':'Admin'
 }
-function App() {
+function App(props : IState) {
   return (
       <Routes>
           <Route path="/" element={<Layout />}>
@@ -34,7 +30,7 @@ function App() {
                   <Route path="/" element={<Home />} />
               </Route>*/}
               <Route path="/" element={<Home />} />
-              <Route path="/profile" element={<Profile user={user} />} />
+              <Route path="/profile" element={<Profile user={props.state?.user} />} />
 
           </Route>
       </Routes>

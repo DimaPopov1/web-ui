@@ -3,7 +3,7 @@ import React from "react";
 import s from './Profile.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProfileImage from "./ProfileImage";
-interface IUser {
+export interface IUser  {
     user: {
         email: string
         firstName?: string
@@ -25,6 +25,10 @@ const Profile = ({user}: IUser) => {
                     className="form-control"  placeholder="Your last name"  value={user.lastName} disabled /></div>
                 <div><label className="labels">Address</label><input type="text"
                     className="form-control"  placeholder="Your address"  value={user.address} disabled /></div>
+
+                <div className="mt-5 text-center"> {/*s.profile-button*/}
+                    <button className={['btn btn-primary ', s.profileButton].join('')} type="button">Update Profile</button>
+                </div>
             </div>
         </div>
     );
