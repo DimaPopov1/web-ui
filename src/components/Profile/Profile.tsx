@@ -1,17 +1,11 @@
 import React, {useState} from "react";
 
-import s from './Profile.module.css';
+import style from './Profile.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProfileImage from "./ProfileImage";
+import {IUser} from "../../types/types";
 
-export interface IUser {
-    user: {
-        email: string
-        firstName?: string
-        lastName?: string
-        address?: string
-    }
-}
+
 const Profile = ({user}: IUser) => {
 
     const [isDisabled, setIsDisabled] = useState(true);
@@ -38,7 +32,7 @@ const Profile = ({user}: IUser) => {
 
 
     return (
-        <div className={s.ProfileContainer}>
+        <div className={style.ProfileContainer}>
             <div className="border-end">
                 <ProfileImage email={user.email}/>
             </div>
@@ -63,7 +57,7 @@ const Profile = ({user}: IUser) => {
                                                                      disabled={isDisabled}/></div>
 
                 <div className="mt-5 text-center">
-                    <button className={['btn btn-primary ', s.profileButton].join('')} type="button"
+                    <button className={['btn btn-primary ', style.profileButton].join('')} type="button"
                             onClick={enableInput}>Update Profile
                     </button>
                 </div>
