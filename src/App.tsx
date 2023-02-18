@@ -5,10 +5,8 @@ import Login from './components/Authorization/Login';
 import Layout from './components/Layout';
 import RequireAuth from './components/RequireAuth';
 import Home from './components/Home/Home';
-import AuthFooter from './components/Footer/Footer';
 import './css/App.css';
-import Footer from "./components/Footer/Footer";
-import Profile, {IUser} from "./components/Profile/Profile";
+import Profile from "./components/Profile/Profile";
 import {IState} from "./redux/state";
 
 
