@@ -5,8 +5,6 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {AuthProvider} from "./context/AuthProvider";
 import App from './App';
 import state from './redux/state';
-import {Provider} from "react-redux";
-import {store} from './redux/store';
 import './css/index.css';
 
 const root = ReactDOM.createRoot(
@@ -16,13 +14,11 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <BrowserRouter>
-            <Provider store={store}>
                 <AuthProvider>
                     <Routes>
                         <Route path="/*" element={<App state={state}/>}/>
                     </Routes>
                 </AuthProvider>
-            </Provider>
         </BrowserRouter>
     </React.StrictMode>
 );

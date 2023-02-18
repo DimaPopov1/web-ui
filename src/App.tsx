@@ -3,7 +3,6 @@ import {Routes, Route} from 'react-router-dom';
 import Register from './components/Authorization/Register';
 import Login from './components/Authorization/Login';
 import Layout from './components/Layout';
-import RequireAuth from './components/RequireAuth';
 import Home from './components/Home/Home';
 import './css/App.css';
 import Profile from "./components/Profile/Profile";
