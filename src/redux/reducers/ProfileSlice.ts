@@ -1,5 +1,6 @@
-    import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {IUser} from './../../types/types'
+import {fetchProfile} from "./ActionCreater";
 
 interface ProfileState {
     user: IUser;
@@ -7,28 +8,29 @@ interface ProfileState {
     error: string;
 }
 
-const initialState : ProfileState = {
-    user: {} as IUser ,
-    isLoading:false,
+const initialState: ProfileState = {
+    user: {} as IUser,
+    isLoading: false,
     error: ""
 }
 
 export const profileSlice = createSlice({
     name: "profile",
     initialState,
-    reducers:{
-        userFetching(state){
-            state.isLoading = true;
-        },
-        userFetchingSuccess(state, action:PayloadAction<IUser>){
+    reducers: {},
+    extraReducers: {
+        [fetchProfile.fulfilled.type]: (state, action: PayloadAction<IUser>) => {
             state.isLoading = false;
             state.error = '';
             state.user = action.payload;
         },
-        userFetchingError(state, action: PayloadAction<string>){
+        [fetchProfile.pending.type]: (state, action: PayloadAction<IUser>) => {
+            state.isLoading = true;
+        },
+        [fetchProfile.rejected.type]: (state, action: PayloadAction<string>) => {
             state.isLoading = false;
             state.error = action.payload;
-        }
+        },
     }
 })
 
