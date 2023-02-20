@@ -6,7 +6,7 @@ import Layout from './components/Layout';
 import Home from './components/Home/Home';
 import './css/App.css';
 import Profile from "./components/Profile/Profile";
-import {IState} from "./redux/state";
+import {useAppSelector} from "./hooks/redux";
 
 
 const ROLES = {
@@ -14,7 +14,7 @@ const ROLES = {
     'Dealer':'Dealer',
     'Admin':'Admin'
 }
-function App(props : IState) {
+function App() {
   return (
       <Routes>
           <Route path="/" element={<Layout />}>
@@ -27,7 +27,7 @@ function App(props : IState) {
                   <Route path="/" element={<Home />} />
               </Route>*/}
               <Route path="/" element={<Home />} />
-              <Route path="/profile" element={<Profile user={props.state?.user} />} />
+              <Route path="/profile" element={<Profile />} />
 
           </Route>
       </Routes>

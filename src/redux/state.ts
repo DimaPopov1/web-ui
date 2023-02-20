@@ -1,5 +1,6 @@
 let state = {
         user : {
+        id:"1",
         email : "User@mail.ru",
         firstName: "Igor",
         lastName: "",
@@ -9,6 +10,7 @@ let state = {
 export interface IState {
         state: {
                 user:{
+                        id: string;
                         email : string,
                         firstName: string,
                         lastName: string,

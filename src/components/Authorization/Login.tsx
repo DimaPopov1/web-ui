@@ -51,6 +51,8 @@ const Login = () => {
             setAuth({role: role});
             setCookie('Authorization', accessToken);
             localStorage.setItem('refreshToken', refreshToken);
+            localStorage.setItem('Authorization', accessToken);
+
 
             setUser('');
             setPwd('');

@@ -1,8 +1,8 @@
 export interface IUser {
-    user: {
+        id:string
         email: string
         firstName?: string
         lastName?: string
         address?: string
-    }
+    
 }
