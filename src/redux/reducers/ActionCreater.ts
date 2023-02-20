@@ -5,16 +5,6 @@ import {profileSlice} from './ProfileSlice';
 import {createAsyncThunk} from "@reduxjs/toolkit";
 
 const PROFILE_API_URL = "userprofile"
-/*export const fetchProfile = () => async (dispatch:AppDispatch) => {
-    try {
-        dispatch(profileSlice.actions.userFetching());
-        const response = await axios.get<IUser>(PROFILE_API_URL);
-        dispatch(profileSlice.actions.userFetchingSuccess(response.data));
-    }
-    catch (e:any){
-        dispatch(profileSlice.actions.userFetchingError(e.message))
-    }
-}*/
 
 export const fetchProfile = createAsyncThunk(
     PROFILE_API_URL,

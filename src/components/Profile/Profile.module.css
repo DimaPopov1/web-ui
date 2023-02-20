@@ -14,6 +14,7 @@
 
 .profileButton {
     background: rgb(99, 39, 120);
+    margin: 10px;
     box-shadow: none;
     border: none
 }
@@ -31,7 +32,9 @@
     background: #682773;
     box-shadow: none
 }
-
+.profileButton:disabled{
+    display: none;
+}
 .back:hover {
     color: #682773;
     cursor: pointer
