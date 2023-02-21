@@ -70,12 +70,6 @@ const Profile = (props:IUser) => {
         setAddressName(target.value)
     }
 
-
-/*    console.log(user);
-    console.log(firstName)*/
-    console.log(props);
-
-
     return (
         <div className={style.ProfileContainer}>
             <div className="border-end">
