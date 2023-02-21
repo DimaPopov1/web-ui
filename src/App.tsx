@@ -8,13 +8,14 @@ import './css/App.css';
 import Profile from "./components/Profile/Profile";
 import {useAppSelector} from "./hooks/redux";
 
-
 const ROLES = {
     'User':'User',
     'Dealer':'Dealer',
     'Admin':'Admin'
 }
 function App() {
+    const  {user} = useAppSelector(state => state.profileReducer)
+
   return (
       <Routes>
           <Route path="/" element={<Layout />}>

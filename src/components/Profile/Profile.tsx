@@ -6,22 +6,31 @@ import {useAppDispatch, useAppSelector} from "../../hooks/redux";
 import {fetchProfile} from "../../redux/reducers/ActionCreater";
 import style from './Profile.module.css';
 import axios from "../../routes/userApi";
+import {IUser} from "../../types/types";
+import {connect, TypedUseSelectorHook} from "react-redux";
 
 const UPDATE_USER_PROFILE_API_URL = "updateuserprofile";
 
-const Profile = () => {
+const Profile = (props:IUser) => {
 
     const dispatch = useAppDispatch();
-    const  {user, isLoading, error} = useAppSelector(state => state.profileReducer)
 
     useEffect(() => {
-        dispatch(fetchProfile())
+        dispatch(fetchProfile());
+
     }, [])
 
+    useEffect(() => {
+        setFirstName(firstName ?? props.firstName);
+        setLastName(lastName ?? props.lastName);
+        setAddressName(address ?? props.address);
+    })
+
+    const  {user, isLoading, error} = useAppSelector(state => state.profileReducer)
 
     const [isDisabled, setIsDisabled] = useState(true);
 
-     const [firstName, setFirstName] = useState(user?.firstName);
+     const [firstName, setFirstName] = useState(props.firstName);
      const [lastName, setLastName] = useState(user?.lastName);
      const [address, setAddressName] = useState(user?.address);
 
@@ -36,8 +45,8 @@ const Profile = () => {
                 );
                 dispatch(fetchProfile());
                 setIsDisabled(!isDisabled);
-            } catch (e){
-
+            } catch (e:any){
+                console.log(e.message)
             }
         }
     };
@@ -48,7 +57,6 @@ const Profile = () => {
         setAddressName(user.address ?? "")
         setIsDisabled(!isDisabled);
     }
-
     const handleFirstName = (e: React.FormEvent<HTMLInputElement>) => {
         const target = e.target as HTMLInputElement;
         setFirstName(target.value)
@@ -61,6 +69,12 @@ const Profile = () => {
         const target = e.target as HTMLInputElement;
         setAddressName(target.value)
     }
+
+
+/*    console.log(user);
+    console.log(firstName)*/
+    console.log(props);
+
 
     return (
         <div className={style.ProfileContainer}>
@@ -102,4 +116,13 @@ const Profile = () => {
     );
 
 }
-export default Profile;
+function mapStateToProps(state: any) {
+    return {
+       id: state.profileReducer.user.id,
+        email:  state.profileReducer.user.email,
+        firstName:  state.profileReducer.user.firstName,
+        lastName:  state.profileReducer.user.lastName,
+        address:  state.profileReducer.user.address
+    }
+}
+export default  connect(mapStateToProps)(Profile);
