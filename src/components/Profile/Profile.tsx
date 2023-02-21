@@ -31,8 +31,8 @@ const Profile = (props:IUser) => {
     const [isDisabled, setIsDisabled] = useState(true);
 
      const [firstName, setFirstName] = useState(props.firstName);
-     const [lastName, setLastName] = useState(user?.lastName);
-     const [address, setAddressName] = useState(user?.address);
+     const [lastName, setLastName] = useState(props?.lastName);
+     const [address, setAddressName] = useState(props?.address);
 
     const enableInput = () => {
         if(isDisabled == true){
