@@ -7,6 +7,7 @@ import Home from './components/Home/Home';
 import './css/App.css';
 import Profile from "./components/Profile/Profile";
 import {useAppSelector} from "./hooks/redux";
+import Catalogue from "./components/Catalogue/Catalogue";
 
 const ROLES = {
     'User':'User',
@@ -29,6 +30,7 @@ function App() {
               </Route>*/}
               <Route path="/" element={<Home />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/catalogue" element={<Catalogue />} />
 
           </Route>
       </Routes>
