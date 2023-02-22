@@ -6,3 +6,15 @@ export interface IUser {
         address?: string
     
 }
+
+export interface Catalogue{
+       cars:  []
+        pageViewModel: IPageViewModel,
+}
+
+export interface IPageViewModel {
+        PageNumber : number,
+        TotalPages: number,
+        HasPreviousPage: boolean
+        HasNextPage:boolean
+}
