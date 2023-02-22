@@ -1,7 +1,5 @@
-import {AppDispatch} from "../store";
-import axios from './../../routes/userApi'
-import {IUser} from "../../types/types";
-import {profileSlice} from './ProfileSlice';
+import axios from '../../../routes/userApi'
+import {IUser} from "../../../types/types";
 import {createAsyncThunk} from "@reduxjs/toolkit";
 
 const PROFILE_API_URL = "userprofile"

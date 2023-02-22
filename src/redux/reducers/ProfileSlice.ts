@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {IUser} from './../../types/types'
-import {fetchProfile} from "./ActionCreater";
+import {fetchProfile} from "./thunks/ProfileThunk";
 
 interface ProfileState {
     user: IUser;

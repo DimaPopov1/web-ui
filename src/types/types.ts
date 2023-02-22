@@ -9,18 +9,18 @@ export interface IUser {
     
 }
 
-export interface ICatalogue{
-       cars:  ICar[],
+export interface ICatalogue {
+        cars:  ICar[],
         pageViewModel: IPageViewModel,
         filterViewModel: IFilterViewModel,
         sortViewModel : ISortViewModel
 }
 
-export interface ICar {
+export interface ICar  {
         id: string,
         name: string,
         price: number,
-        image: Image,
+        image: string,
         yearOfProduction: number,
         description:string,
         dealerId:string

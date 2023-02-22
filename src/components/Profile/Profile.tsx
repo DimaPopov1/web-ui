@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import ProfileImage from "./ProfileImage";
 import {useAppDispatch, useAppSelector} from "../../hooks/redux";
-import {fetchProfile} from "../../redux/reducers/ActionCreater";
+import {fetchProfile} from "../../redux/reducers/thunks/ProfileThunk";
 import style from './Profile.module.css';
 import axios from "../../routes/userApi";
 import {IUser} from "../../types/types";

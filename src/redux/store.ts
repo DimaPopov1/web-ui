@@ -1,8 +1,10 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import profileReducer from './reducers/ProfileSlice';
+import catalogueReducer from './reducers/CatalogueSlice'
 
 const rootReducer = combineReducers({
-    profileReducer
+    profileReducer,
+    catalogueReducer
 })
 
 export const setupStore = () => {
