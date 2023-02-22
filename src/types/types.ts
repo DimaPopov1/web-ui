@@ -1,3 +1,5 @@
+import {Image} from "react-bootstrap";
+
 export interface IUser {
         id:string
         email: string
@@ -7,9 +9,21 @@ export interface IUser {
     
 }
 
-export interface Catalogue{
-       cars:  []
+export interface ICatalogue{
+       cars:  ICar[],
         pageViewModel: IPageViewModel,
+        filterViewModel: IFilterViewModel,
+        sortViewModel : ISortViewModel
+}
+
+export interface ICar {
+        id: string,
+        name: string,
+        price: number,
+        image: Image,
+        yearOfProduction: number,
+        description:string,
+        dealerId:string
 }
 
 export interface IPageViewModel {
@@ -17,4 +31,12 @@ export interface IPageViewModel {
         TotalPages: number,
         HasPreviousPage: boolean
         HasNextPage:boolean
+}
+export interface IFilterViewModel {
+        selectedCar: string,
+        selectedName: string
+}
+export interface ISortViewModel {
+        current: number,
+        isAscOrder: boolean
 }
