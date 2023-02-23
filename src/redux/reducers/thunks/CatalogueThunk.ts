@@ -8,7 +8,7 @@ export const fetchCatalogue = createAsyncThunk(
     "catalogue",
     async (_, thunkAPI) => {
         try {
-            const response = await axios.post<ICatalogue>(CATALOGUE_API_URL,{params: {}});
+            const response = await axios.post<ICatalogue>(CATALOGUE_API_URL, {params:{}});
             return response.data
         } catch (e) {
             return thunkAPI.rejectWithValue("Couldn't connect to server")

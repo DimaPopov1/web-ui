@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import Cars from "./Cars";
 import {useAppDispatch, useAppSelector} from "../../hooks/redux";
 import {fetchCatalogue} from "../../redux/reducers/thunks/CatalogueThunk";
+import style from './Catalogue.module.css'
 
 const Catalogue = () => {
 
@@ -14,9 +15,20 @@ const Catalogue = () => {
 
     }, [])
 
-    return(
-       <Cars  cars={catalogue.cars}/>
+    return (
+            <div className={style.Catalogue}>
+                <div></div>
+                <div className={style.Cars}>
+
+                    {isLoading && <h2>Loading ...</h2>}
+                    {error && <h2>{error}</h2> }
+
+                    <Cars cars={catalogue.cars}/>
+                </div>
+                <div></div>
+            </div>
     )
 }
+
 
 export default Catalogue;
