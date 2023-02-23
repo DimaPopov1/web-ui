@@ -1,21 +1,21 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Cars from "./Cars";
-
-const Model = {
-    Cars: [
-        {Name: "Rino", Price:25.9, YearOfProduction: 2011},
-        {Name: "BMV", Price:25.2, YearOfProduction: 2021},
-        {Name: "Rino", Price:54.2, YearOfProduction: 2021},
-        {Name: "Toyata", Price:154.2, YearOfProduction: 2021},
-        {Name: "Rino", Price:2.2, YearOfProduction: 2021},
-        {Name: "Pizo", Price:24.2, YearOfProduction: 2029},
-    ]
-}
-
+import {useAppDispatch, useAppSelector} from "../../hooks/redux";
+import {fetchCatalogue} from "../../redux/reducers/thunks/CatalogueThunk";
 
 const Catalogue = () => {
+
+    const {catalogue, isLoading, error} = useAppSelector(state => state.catalogueReducer)
+
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(fetchCatalogue());
+
+    }, [])
+
     return(
-       <Cars  cars={Model.Cars}/>
+       <Cars  cars={catalogue.cars}/>
     )
 }
 
