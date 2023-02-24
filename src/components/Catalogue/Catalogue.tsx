@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import Cars from "./Cars";
 import {useAppDispatch, useAppSelector} from "../../hooks/redux";
 import {fetchCatalogue} from "../../redux/reducers/thunks/CatalogueThunk";
+import Pagination from "./Pagination";
 import style from './Catalogue.module.css'
 
 const Catalogue = () => {
@@ -12,14 +13,10 @@ const Catalogue = () => {
 
     useEffect(() => {
         dispatch(fetchCatalogue());
-
-        for(let i =2; i <= catalogue.pageViewModel.TotalPages; i++ ){
-            setPages([...pages, i]);
-        }
     }, [])
 
 
-    const [pages, setPages] = useState([1]);
+
 
 
     return (
@@ -30,13 +27,7 @@ const Catalogue = () => {
                     {isLoading && <h2>Loading ...</h2>}
                     {error && <h2>{error}</h2> }
                     <Cars cars={catalogue.cars}/>
-
-                    <div>
-                        {pages.map(p => (
-                            <span key={p}> {p} </span>
-                            ))}
-                    </div>
-
+                    <Pagination  {...catalogue.pageViewModel} />
 
                 </div>
                 <div></div>
