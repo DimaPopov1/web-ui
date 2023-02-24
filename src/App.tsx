@@ -24,10 +24,7 @@ function App() {
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
 
-              {/* we want to protect these routes */}{/*
-              <Route element={<RequireAuth AllowedRole = {ROLES.User} />}>
-                  <Route path="/" element={<Home />} />
-              </Route>*/}
+
               <Route path="/" element={<Home />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/catalogue" element={<Catalogue />} />

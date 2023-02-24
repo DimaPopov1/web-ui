@@ -2,7 +2,6 @@
     display: grid;
     margin-top: 70px;
     width: 95vw;
-    height: 95vh;
     grid-template-columns: 1fr 4fr 1fr;
 }
 .Catalogue > *{
