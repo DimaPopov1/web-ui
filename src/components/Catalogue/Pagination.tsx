@@ -15,12 +15,12 @@ const Pagination = (props: IPageViewModel) => {
                 setPages(oldPages => [...oldPages, i]);
             }
         }
-    })
+    },[pages])
 
     return (
         <div className={style.Pages}>
             {pages.map(p => (
-                <span key={p}> {p} </span>
+                <span className={props.pageNumber === p && style.CurrentPage} key={p}> {p} </span>
             ))}
         </div>
     )

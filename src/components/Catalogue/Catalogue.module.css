@@ -8,12 +8,12 @@
 .Catalogue > *{
 
 }
+.CurrentPage{
+    font-weight: bold;
+}
 
 .Pages{
     bottom: 0;
-}
-.Car{
-
 }
 
 .Image{
