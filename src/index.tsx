@@ -16,7 +16,6 @@ const root = ReactDOM.createRoot(
 const store = setupStore()
 
 root.render(
-    <React.StrictMode>
         <BrowserRouter>
             <Provider store={store}>
                 <AuthProvider>
@@ -26,5 +25,4 @@ root.render(
                 </AuthProvider>
             </Provider>
         </BrowserRouter>
-    </React.StrictMode>
 );
