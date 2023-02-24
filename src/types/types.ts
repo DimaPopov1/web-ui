@@ -25,10 +25,10 @@ export interface ICar  {
 }
 
 export interface IPageViewModel {
-        PageNumber : number,
-        TotalPages: number,
-        HasPreviousPage: boolean
-        HasNextPage:boolean
+        pageNumber : number,
+        totalPages: number,
+        hasPreviousPage: boolean
+        hasNextPage:boolean
 }
 export interface IFilterViewModel {
         selectedCar: string,

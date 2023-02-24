@@ -6,7 +6,7 @@ import style from './Catalogue.module.css'
 const Cars = (props: {cars: ICar[] }) => {
 
     const listCars = props?.cars?.map((car) =>
-        <div className="card col-sm-3 m-3">
+        <div className="card col-sm-3 m-3" key={car.id}>
             <img src={["data:image/jpg;base64,", car.image].join("")}
                  className="card-img img-thumbnail border-0" style={{height: 210}} alt="Image" />
                 <div className="card-body">

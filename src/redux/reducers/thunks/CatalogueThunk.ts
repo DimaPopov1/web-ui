@@ -2,7 +2,7 @@ import axios from '../../../routes/carApi'
 import {ICatalogue} from "../../../types/types";
 import {createAsyncThunk} from "@reduxjs/toolkit";
 
-const CATALOGUE_API_URL = ""
+const CATALOGUE_API_URL = "/"
 
 export const fetchCatalogue = createAsyncThunk(
     "catalogue",

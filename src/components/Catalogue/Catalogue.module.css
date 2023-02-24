@@ -1,6 +1,6 @@
 .Catalogue{
     display: grid;
-    margin-top: 80px;
+    margin-top: 70px;
     width: 95vw;
     height: 95vh;
     grid-template-columns: 1fr 4fr 1fr;
@@ -9,6 +9,9 @@
 
 }
 
+.Pages{
+    bottom: 0;
+}
 .Car{
 
 }
