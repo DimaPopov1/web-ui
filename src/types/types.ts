@@ -38,3 +38,10 @@ export interface ISortViewModel {
         current: number,
         isAscOrder: boolean
 }
+
+export interface ICarPageHandler {
+        name: string,
+        page: number,
+        sortState: string,
+        isAskOrder: boolean
+}

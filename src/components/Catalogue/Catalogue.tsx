@@ -7,12 +7,12 @@ import style from './Catalogue.module.css'
 
 const Catalogue = () => {
 
-    const {catalogue, isLoading, error} = useAppSelector(state => state.catalogueReducer)
+    const {catalogue, pageHandler, isLoading, error} = useAppSelector(state => state.catalogueReducer)
 
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(fetchCatalogue());
+        dispatch(fetchCatalogue(pageHandler));
     }, [])
 
 
