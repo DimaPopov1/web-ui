@@ -15,6 +15,7 @@ const Catalogue = () => {
         dispatch(fetchCatalogue(pageHandler));
     }, [])
 
+
     return (
             <div className={style.Catalogue}>
                 <div></div>

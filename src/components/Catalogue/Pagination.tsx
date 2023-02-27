@@ -11,12 +11,10 @@ const Pagination = (props: IPageViewModel) => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        if (pages.length === 0) {
-            for (let i = 1; i <= props?.totalPages; i++) {
-                setPages(oldPages => [...oldPages, i]);
-            }
+        if (!pages.length) {
+                setPages(Array.from({length: props.totalPages}, (_, i) => i + 1));
         }
-    },[pages])
+    })
 
     const changePage = (page:number) => {
         dispatch(fetchCatalogue({...pageHandler, page : page}))
@@ -25,7 +23,7 @@ const Pagination = (props: IPageViewModel) => {
     return (
         <div className={style.Pages}>
             {pages.map(p => (
-                <span className={props.pageNumber === p && style.CurrentPage}
+                <span className={props.pageNumber === p ? style.CurrentPage : style.Page}
                       key={p}
                         onClick={() =>  changePage(p)}> {p} </span>
 
