@@ -8,7 +8,7 @@ export const fetchCatalogue = createAsyncThunk(
     "catalogue",
     async (pageHandler: ICarPageHandler, thunkAPI) => {
         try {
-            const response = await axios.post<ICatalogue>(CATALOGUE_API_URL, {page:pageHandler.page});
+            const response = await axios.post<ICatalogue>(CATALOGUE_API_URL, {page:pageHandler.page,name: pageHandler.name});
             return response.data
         } catch (e) {
             return thunkAPI.rejectWithValue("Couldn't connect to server")

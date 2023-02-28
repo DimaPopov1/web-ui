@@ -1,7 +1,6 @@
 import React, {useEffect} from "react";
 import {ICar} from "../../types/types";
 
-import style from './Catalogue.module.css'
 
 const Cars = (props: { cars: ICar[] }) => {
 
