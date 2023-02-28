@@ -1,6 +1,7 @@
 .Catalogue{
     display: grid;
     width: 95vw;
+    height: 100vh;
     grid-template-columns: 1fr 4fr 1fr;
 }
 
@@ -12,7 +13,7 @@
 }
 
 .Pages{
-    bottom: 0;
+
 }
 
 

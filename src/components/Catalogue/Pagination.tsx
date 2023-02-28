@@ -24,16 +24,18 @@ const Pagination = (props: IPageViewModel) => {
         <div className={style.Pages}>
             {props.totalPages > 1
                 ? <span onClick={() => {
-                    if(props.pageNumber > 1) changePage(props.pageNumber - 1)
+                    if (props.pageNumber > 1) changePage(props.pageNumber - 1)
                 }}> &lt; </span>
                 : null}
 
-            {pages.map(p => (
-                <span className={props.pageNumber === p ? style.CurrentPage : style.Page}
-                      key={p}
-                      onClick={() => changePage(p)}> {p} </span>
+            {props.totalPages > 1 ?
+                pages.map(p => (
+                    <span className={props.pageNumber === p ? style.CurrentPage : style.Page}
+                          key={p}
+                          onClick={() => changePage(p)}> {p} </span>
 
-            ))}
+                ))
+                : null}
             {props.totalPages > 1
                 ? <span onClick={() => {
                     if (props.pageNumber < props.totalPages) changePage(props.pageNumber + 1)
