@@ -7,8 +7,8 @@ const SearchBar = () => {
             <input name="name" type="text" className="form-control" placeholder="Car's name"
                    aria-label="Recipient's username" aria-describedby="basic-addon2"
                    value=""/>
-                <div className="input-group-append">
-                    <button className="btn btn-outline-secondary m-0 " type="submit" value="Search">Search</button>
+                <div className=" input-group-append ">
+                    <button className="rounded-0 btn btn-outline-secondary m-0 rounded-end" type="submit" value="Search">Search</button>
                 </div>
         </div>
     )
