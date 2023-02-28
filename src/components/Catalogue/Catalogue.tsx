@@ -4,6 +4,7 @@ import {useAppDispatch, useAppSelector} from "../../hooks/redux";
 import {fetchCatalogue} from "../../redux/reducers/thunks/CatalogueThunk";
 import Pagination from "./Pagination";
 import style from './Catalogue.module.css'
+import SearchBar from "./SearchBar";
 
 const Catalogue = () => {
 
@@ -23,6 +24,7 @@ const Catalogue = () => {
 
                     {isLoading && <h2>Loading ...</h2>}
                     {error && <h2>{error}</h2> }
+                    <SearchBar />
                     <Cars cars={catalogue.cars}/>
                     <Pagination  {...catalogue.pageViewModel} />
 
