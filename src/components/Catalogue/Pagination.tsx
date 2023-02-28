@@ -17,7 +17,7 @@ const Pagination = (props: IPageViewModel) => {
     })
 
     const changePage = (page:number) => {
-        dispatch(fetchCatalogue({...pageHandler, page : page}))
+        dispatch(fetchCatalogue({...pageHandler, page: page}))
     }
 
     return (

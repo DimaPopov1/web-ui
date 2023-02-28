@@ -1,12 +1,9 @@
 .Catalogue{
     display: grid;
-    margin-top: 70px;
     width: 95vw;
     grid-template-columns: 1fr 4fr 1fr;
 }
-.Catalogue > *{
 
-}
 .CurrentPage{
     font-weight: bold;
 }
@@ -20,4 +17,7 @@
 
 .Image{
     height: 170px;
+}
+sw
+.Cars{
 }
