@@ -1,3 +1,5 @@
+import * as punycode from "punycode";
+
 export interface IUser {
         id:string
         email: string
@@ -35,7 +37,7 @@ export interface IFilterViewModel {
         selectedName: string
 }
 export interface ISortViewModel {
-        current: number,
+        current: SortState,
         isAscOrder: boolean
 }
 
@@ -44,4 +46,10 @@ export interface ICarPageHandler {
         page: number,
         sortState: string,
         isAskOrder: boolean
+}
+
+export enum  SortState
+{
+        OrderByName ="OrderByName" ,
+        OrderByPrice = "OrderByPrice"
 }

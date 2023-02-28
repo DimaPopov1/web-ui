@@ -5,6 +5,7 @@ import {fetchCatalogue} from "../../redux/reducers/thunks/CatalogueThunk";
 import Pagination from "./Pagination";
 import style from './Catalogue.module.css'
 import SearchBar from "./SearchBar";
+import SortedList from "./SortedList/SortedList";
 
 const Catalogue = () => {
 
@@ -19,7 +20,9 @@ const Catalogue = () => {
 
     return (
             <div className={style.Catalogue}>
-                <div></div>
+                <div>
+                    <SortedList {...catalogue.sortViewModel} />
+                </div>
                 <div >
 
                     {isLoading && <h2>Loading ...</h2>}
