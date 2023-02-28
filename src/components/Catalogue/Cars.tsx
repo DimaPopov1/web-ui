@@ -23,7 +23,7 @@ const Cars = (props: { cars: ICar[] }) => {
     );
 
     return (
-        <div className="row m-3 p-2  flex-wrap justify-content-between">
+        <div className="row m-3 p-2  flex-wrap justify-content-start">
             {listCars}
         </div>
     )
