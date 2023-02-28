@@ -20,7 +20,7 @@ const Catalogue = () => {
     return (
             <div className={style.Catalogue}>
                 <div></div>
-                <div className={style.Cars}>
+                <div >
 
                     {isLoading && <h2>Loading ...</h2>}
                     {error && <h2>{error}</h2> }

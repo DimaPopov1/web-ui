@@ -3,7 +3,7 @@ import React from "react";
 const SearchBar = () => {
 
     return (
-        <div className="input-group col-sm-10">
+        <div className="input-group col-sm-6    ">
             <input name="name" type="text" className="form-control" placeholder="Car's name"
                    aria-label="Recipient's username" aria-describedby="basic-addon2"
                    value="ef"/>
