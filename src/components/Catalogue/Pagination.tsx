@@ -12,28 +12,33 @@ const Pagination = (props: IPageViewModel) => {
 
     useEffect(() => {
         if (!pages.length) {
-                setPages(Array.from({length: props.totalPages}, (_, i) => i + 1));
+            setPages(Array.from({length: props.totalPages}, (_, i) => i + 1));
         }
     })
 
-    const changePage = (page:number) => {
+    const changePage = (page: number) => {
         dispatch(fetchCatalogue({...pageHandler, page: page}))
     }
 
     return (
         <div className={style.Pages}>
-            <span onClick={() => {
-                if (props.pageNumber > 1) changePage(props.pageNumber - 1)
-            }}> &lt; </span>
+            {props.totalPages > 1
+                ? <span onClick={() => {
+                    if(props.pageNumber > 1) changePage(props.pageNumber - 1)
+                }}> &lt; </span>
+                : null}
+
             {pages.map(p => (
                 <span className={props.pageNumber === p ? style.CurrentPage : style.Page}
                       key={p}
-                        onClick={() =>  changePage(p)}> {p} </span>
+                      onClick={() => changePage(p)}> {p} </span>
 
             ))}
-            <span onClick={() => {
-                if (props.pageNumber < props.totalPages) changePage(props.pageNumber + 1)
-            }}> &gt; </span>
+            {props.totalPages > 1
+                ? <span onClick={() => {
+                    if (props.pageNumber < props.totalPages) changePage(props.pageNumber + 1)
+                }}> &gt; </span>
+                : null}
         </div>
     )
 }
