@@ -1,11 +1,19 @@
 import React from "react";
 import style from './SortedList.module.css'
 import {ISortViewModel, SortState} from "../../../types/types";
+import {useAppDispatch, useAppSelector} from "../../../hooks/redux";
+import {fetchCatalogue} from "../../../redux/reducers/thunks/CatalogueThunk";
+import {retry} from "@reduxjs/toolkit/query";
 
 const SortedList = (props: ISortViewModel) => {
 
     const [price, setPrice] = React.useState("");
+    const {pageHandler} = useAppSelector(state => state.catalogueReducer)
+    const dispatch = useAppDispatch();
 
+     const sortCars = () => {
+         dispatch(fetchCatalogue({...pageHandler, sortState: SortState.OrderByPrice, isAskOrder: price==="false"}))
+     }
 
     return (
         <div className={["", style.SortedList].join("")}>
@@ -31,8 +39,10 @@ const SortedList = (props: ISortViewModel) => {
                     </div>
                 </div>
             </div>
-            <button className={["btn btn-outline-success ",style.Button].join("")}>Sort</button>
-            <button className={["btn btn-outline-danger ",style.Button].join("")}>Clear</button>
+            <button className={["btn btn-outline-success ",style.Button].join("")}
+                   onClick={sortCars} >Sort</button>
+            <button className={["btn btn-outline-danger ",style.Button].join("")}
+                    onClick={() => setPrice("")}>Clear</button>
         </div>
     )
 }

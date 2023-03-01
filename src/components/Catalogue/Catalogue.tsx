@@ -24,10 +24,9 @@ const Catalogue = () => {
                     <SortedList {...catalogue.sortViewModel} />
                 </div>
                 <div >
-
+                    <SearchBar />
                     {isLoading && <h2>Loading ...</h2>}
                     {error && <h2>{error}</h2> }
-                    <SearchBar />
                     <Cars cars={catalogue.cars}/>
                     <Pagination  {...catalogue.pageViewModel} />
 
